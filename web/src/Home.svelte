@@ -8,15 +8,9 @@
 
 <h1>Home</h1>
 
-<div>
-  <button on:click={() => navigate("/about", "Hello world")}
-    >Go to About Page</button
-  >
-</div>
-
 <div class="areagrid">
   {#each skillAreas as area, i}
-    <div on:click={() => gotoUpdate(i, area)}>
+    <div on:click={() => navigate("/update", area)}>
       <AreaCard {area} />
     </div>
   {/each}

@@ -1,5 +1,15 @@
+<script>
+  export let navigate;
+
+  function goBack() {
+    window.history.back(); // Go back to the previous page
+  }
+</script>
+
 <nav>
-  <h3>&leftarrow;Back</h3>
+  <button on:click={goBack}>&leftarrow;Back</button>
+  <!-- Back Button -->
+  <button on:click={() => navigate("/")}>Go to Home Page</button>
 </nav>
 
 <style>

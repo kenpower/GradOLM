@@ -1,7 +1,8 @@
 <script>
   import Stars from "./Stars.svelte";
+  import { appData } from "./router.js";
 
-  export let area;
+  export let area = $appData;
 
   // Track which criteria are checked
   let checkedCriteria = new Set();

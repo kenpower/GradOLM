@@ -14,14 +14,12 @@
   }
 </script>
 
-<Nav />
-
 {#if $currentRoute === "/"}
   <Home {navigate} />
 {:else if $currentRoute === "/update"}
-  <AreaUpdate {navigate} />
-{:else if $currentRoute === "/about"}
-  <About {navigate} />
+  <Nav {navigate} />
+  <AreaUpdate />
 {:else}
+  <Nav {navigate} />
   <h2>404: Page Not Found</h2>
 {/if}
