@@ -26,7 +26,7 @@
   <div class="skill-area" style="--color: {area.color}">
     <h2>
       {area.name}
-      <span style="background-color: {area.color}">
+      <span style="background-color: {area.color}; padding:5px">
         <Stars filled={3} />
       </span>
     </h2>
@@ -38,27 +38,36 @@
         <p>{skill.description}</p>
 
         {#each Object.entries(skill.criteria) as [level, criteria]}
-          <div class="criteria-level">
-            <h4>{level.charAt(0).toUpperCase() + level.slice(1)}</h4>
-            <ul class="criteria-list">
-              {#each criteria as criterion}
-                <li>
-                  <input
-                    type="checkbox"
-                    class="checkbox"
-                    checked={isChecked(criterion)}
-                    on:change={() => toggleCheck(criterion)}
-                  />
-                  <span
-                    class="criteria-label {isChecked(criterion)
-                      ? 'checked'
-                      : ''}">{criterion}</span
-                  >
-                </li>
-              {/each}
-            </ul>
-          </div>
+          {#if level != "expert" && level != "advanced"}
+            <div class="criteria-level">
+              <h4>{level.charAt(0).toUpperCase() + level.slice(1)}</h4>
+              <ul class="criteria-list">
+                {#each criteria as criterion}
+                  <li>
+                    <input
+                      type="checkbox"
+                      class="checkbox"
+                      checked={isChecked(criterion)}
+                      on:change={() => toggleCheck(criterion)}
+                    />
+                    <span
+                      class="criteria-label {isChecked(criterion)
+                        ? 'checked'
+                        : ''}">{criterion}</span
+                    >
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          {/if}
         {/each}
+        <h6>advanced and expert criteria hidden ...</h6>
+        <h4>Resources for {skill.name}</h4>
+        <ul>
+          <li><a href="https://www.google.com">Google</a></li>
+          <li><a href="https://www.youtube.com">YouTube</a></li>
+          <li><a href="https://www.github.com">GitHub</a></li>
+        </ul>
       </div>
     {/each}
   </div>
