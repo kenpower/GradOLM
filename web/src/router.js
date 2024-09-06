@@ -3,16 +3,8 @@ import { writable } from "svelte/store";
 
 export const appData = writable({});
 
-function removePrefix(str, prefix) {
-  if (str.startsWith(prefix)) {
-    return str.slice(prefix.length);
-  }
-  return str;
-}
 // This store will keep track of the current path
-export const currentRoute = writable(
-  removePrefix(window.location.pathname, "/GradOLM")
-);
+export const currentRoute = writable(window.location.pathname);
 
 // Listen for the popstate event, which is triggered when using the browser's back/forward buttons
 window.addEventListener("popstate", () => {

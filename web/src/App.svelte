@@ -8,15 +8,12 @@
   var page = "home";
   var area = 0;
 
-  function gotoUpdate(i, a) {
-    page = "update";
-    area = a;
-  }
+  $: route = $currentRoute.replace("/GradOLM", "");
 </script>
 
-{#if $currentRoute === "/"}
+{#if route === "/"}
   <Home {navigate} />
-{:else if $currentRoute === "/update"}
+{:else if route === "/update"}
   <Nav {navigate} />
   <AreaUpdate />
 {:else}
