@@ -7,8 +7,18 @@
 
 <h1>Home</h1>
 
-{#each skillAreas as area, i}
-  <div on:click={() => gotoUpdate(i)}>
-    <AreaCard {area} />
-  </div>
-{/each}
+<div class="areagrid">
+  {#each skillAreas as area, i}
+    <div on:click={() => gotoUpdate(i, area)}>
+      <AreaCard {area} />
+    </div>
+  {/each}
+</div>
+
+<style>
+  .areagrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+</style>

@@ -1,14 +1,14 @@
 <script>
   import Home from "./Home.svelte";
-  import Update from "./Update.svelte";
+  import AreaUpdate from "./AreaUpdate.svelte";
   import Nav from "./Nav.svelte";
 
   var page = "home";
   var area = 0;
 
-  function gotoUpdate(i) {
+  function gotoUpdate(i, a) {
     page = "update";
-    area = i;
+    area = a;
   }
 </script>
 
@@ -16,7 +16,7 @@
 {#if page === "home"}
   <Home {gotoUpdate} />
 {:else if page === "update"}
-  <Update {area} />
+  <AreaUpdate {area} />
 {:else}
   <p>404 Not Found</p>
 {/if}

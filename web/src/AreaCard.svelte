@@ -4,11 +4,11 @@
 </script>
 
 <div class="card" style="background-color: {area.color}">
-  <h3>{area.title}</h3>
+  <h3>{area.name}</h3>
   <Stars filled={3} />
   <ul>
-    {#each area.description as item}
-      <li>{item}</li>
+    {#each area.skills as { name }}
+      <li>{name}</li>
     {/each}
   </ul>
 </div>
