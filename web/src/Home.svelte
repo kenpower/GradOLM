@@ -2,10 +2,17 @@
   import AreaCard from "./AreaCard.svelte";
   import { skillAreas } from "./data.js";
 
-  export let gotoUpdate;
+  //export let gotoUpdate;
+  export let navigate;
 </script>
 
 <h1>Home</h1>
+
+<div>
+  <button on:click={() => navigate("/about", "Hello world")}
+    >Go to About Page</button
+  >
+</div>
 
 <div class="areagrid">
   {#each skillAreas as area, i}
