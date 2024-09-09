@@ -1,86 +1,3 @@
-// export const skillAreas = [
-//   {
-//     title: "Doing Research",
-//     description: [
-//       "Have disciplinary expertise",
-//       "Perform scientific research",
-//       "Conduct interdisciplinary research",
-//       "Write research documents",
-//       "Apply research ethics and integrity principles",
-//     ],
-//     color: "#d28900",
-//   },
-//   {
-//     title: "Managing Research",
-//     description: [
-//       "Mobilise resources",
-//       "Manage projects",
-//       "Negotiate",
-//       "Evaluate research",
-//       "Promote open access publications",
-//     ],
-//     color: "#556fbf",
-//   },
-//   {
-//     title: "Making an Impact",
-//     description: [
-//       "Participate in the publication process",
-//       "Disseminate results to the research community",
-//       "Teach in academic or vocational contexts",
-//       "Communicate to the broad public",
-//       "Increase impact of science on policy & society",
-//       "Promote open innovation",
-//       "Promote the transfer of knowledge",
-//     ],
-//     color: "#8e3d96",
-//   },
-//   {
-//     title: "Managing Research Tools",
-//     description: [
-//       "Manage research data",
-//       "Promote citizen science",
-//       "Manage intellectual property rights",
-//       "Operate open source software",
-//     ],
-//     color: "#5aac3b",
-//   },
-//   {
-//     title: "Working with Others",
-//     description: [
-//       "Interact professionally",
-//       "Develop networks",
-//       "Work in teams",
-//       "Ensure wellbeing at work",
-//       "Build mentor-mentee relationships",
-//       "Promote inclusion & diversity",
-//     ],
-//     color: "#e7543d",
-//   },
-//   {
-//     title: "Self Management",
-//     description: [
-//       "Manage personal professional development",
-//       "Show entrepreneurial spirit",
-//       "Plan self-organisation",
-//       "Cope with pressure",
-//     ],
-//     color: "#a9815f",
-//   },
-//   {
-//     title: "Cognitive Abilities",
-//     description: [
-//       "Abstract thinking",
-//       "Critical thinking",
-//       "Analytical thinking",
-//       "Strategic thinking",
-//       "Systemic thinking",
-//       "Problem solving",
-//       "Creativity",
-//     ],
-//     color: "#00a9b5",
-//   },
-// ];
-
 export const skillAreas = [
   {
     name: "Cognitive Abilities",
@@ -250,6 +167,7 @@ export const skillAreas = [
       },
     ],
   },
+
   {
     name: "Working with Others",
     description: "Skills required for effective teamwork and collaboration.",
@@ -311,7 +229,7 @@ export const skillAreas = [
             "Appreciates the impact of own behaviour on teamwork.",
           ],
           intermediate: [
-            "Recognises the importance of team leadership behaviours.",
+            "PPPecognises the importance of team leadership behaviours.",
             "Understands own priorities and those of own coworkers, creates a cooperative work environment, and optimizes the output of teamwork.",
           ],
           advanced: [
