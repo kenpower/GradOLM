@@ -5,7 +5,6 @@
   import AreaUpdate from "./AreaUpdate.svelte";
   import Nav from "./Nav.svelte";
   import PrioritiseLearning from "./PrioritiseLearning.svelte";
-  import DragDrop from "./DragDropList.svelte";
 
   var page = "home";
   var area = 0;
