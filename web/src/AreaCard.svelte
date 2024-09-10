@@ -8,7 +8,7 @@
   <Stars filled={3} />
   <ul>
     {#each area.skills as { name }}
-      <li>{name}</li>
+      <li>{name} <Stars filled={2} size={0.75} /></li>
     {/each}
   </ul>
 </div>
