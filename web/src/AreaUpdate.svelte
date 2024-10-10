@@ -24,12 +24,10 @@
 
 <div>
   <div class="skill-area" style="--color: {area.color}">
-    <h2>
-      {area.name}
-      <span style="background-color: {area.color}; padding:5px">
-        <Stars filled={3} />
-      </span>
-    </h2>
+    <h2>{area.name}</h2>
+
+    <Stars filled={3} background_color={area.color} />
+
     <p>{area.description}</p>
 
     {#each area.skills as skill}
@@ -55,6 +53,7 @@
                         ? 'checked'
                         : ''}">{criterion}</span
                     >
+                    <Stars filled={1} number={3} color={"#F8B143"} />
                   </li>
                 {/each}
               </ul>
