@@ -4,8 +4,8 @@
   export let size = 1.5;
   export let orientation = "horizontal"; // Options: "vertical" or "horizontal"
   export let background_color = "transparent";
-  export let color = "#fff";
-  export let unfilledcolor = "#fff6";
+  export let color = "#ddd";
+  export let unfilledcolor = "#ddd6";
 </script>
 
 <span
