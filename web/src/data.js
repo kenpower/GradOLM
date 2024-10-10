@@ -2,7 +2,7 @@ export const skillAreas = [
   {
     name: "Cognitive Abilities",
     description: "Abilities related to thinking and understanding.",
-    color: "#00a9b5",
+    color: "#2DB3C5",
     skills: [
       {
         name: "Abstract Thinking",

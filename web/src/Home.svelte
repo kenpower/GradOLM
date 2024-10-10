@@ -6,24 +6,25 @@
   export let navigate;
 </script>
 
-<h1>Home</h1>
+<div class="home">
+  <h1>Home!</h1>
 
-<button on:click={() => navigate("/prioritise")}>Prioritise Learning</button>
+  <button on:click={() => navigate("/prioritise")}>Prioritise Learning</button>
 
-<div class="areagrid">
-  {#each skillAreas as area, i}
-    <div on:click={() => navigate("/update", area)}>
-      <AreaCard {area} />
-    </div>
-  {/each}
+  <div class="areagrid">
+    {#each skillAreas as area, i}
+      <div on:click={() => navigate("/update", area)}>
+        <AreaCard {area} />
+      </div>
+    {/each}
+  </div>
 </div>
 
 <style>
-  .areagrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+  .home {
+    background: radial-gradient(circle at top left, #209bb4, #08517c);
   }
+
   button {
     cursor: pointer;
     font-family: Arial, sans-serif;
@@ -58,5 +59,12 @@
     unicode-bidi: isolate;
     view-transition-class: none;
     margin: 1em;
+  }
+
+  .areagrid {
+    display: flex;
+    gap: 1em 1em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 </style>
