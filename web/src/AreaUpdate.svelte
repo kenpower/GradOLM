@@ -1,5 +1,6 @@
 <script>
   import Stars from "./Stars.svelte";
+  import SummaryDetail from "./SummaryDetail.svelte";
   import { appData } from "./router.js";
 
   export let area = $appData;
@@ -29,40 +30,42 @@
     <p>{area.description}</p>
 
     {#each area.skills as skill}
-      <details class="skill">
-        <summary>{skill.name}</summary>
-        <p>{skill.description}</p>
+      <SummaryDetail>
+        <p class="skilltitle" slot="slot1">{skill.name}</p>
+        <div slot="slot2">
+          <p>{skill.description}</p>
 
-        {#each Object.entries(skill.criteria) as [level, criteria]}
-          {#if level != "expert" && level != "advanced"}
-            <div class="criteria-level">
-              <h4>{level.charAt(0).toUpperCase() + level.slice(1)}</h4>
-              <ul class="criteria-list">
-                {#each criteria as criterion}
-                  <li>
-                    <input
-                      type="checkbox"
-                      class="checkbox"
-                      checked={isChecked(criterion)}
-                      on:change={() => toggleCheck(criterion)}
-                    />
-                    <span
-                      class="criteria-label {isChecked(criterion)
-                        ? 'checked'
-                        : ''}">{criterion}</span
-                    >
-                    <div id="confidence">
-                      <span>Select stars to indicate your confidence</span>
-                      <Stars filled={1} number={3} color={"#F8B143"} />
-                    </div>
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          {/if}
-        {/each}
-        <h6>advanced and expert criteria hidden ...</h6>
-      </details>
+          {#each Object.entries(skill.criteria) as [level, criteria]}
+            {#if level != "expert" && level != "advanced"}
+              <div class="criteria-level">
+                <h4>{level.charAt(0).toUpperCase() + level.slice(1)}</h4>
+                <ul class="criteria-list">
+                  {#each criteria as criterion}
+                    <li>
+                      <input
+                        type="checkbox"
+                        class="checkbox"
+                        checked={isChecked(criterion)}
+                        on:change={() => toggleCheck(criterion)}
+                      />
+                      <span
+                        class="criteria-label {isChecked(criterion)
+                          ? 'checked'
+                          : ''}">{criterion}</span
+                      >
+                      <div id="confidence">
+                        <span>Select stars to indicate your confidence</span>
+                        <Stars filled={1} number={3} color={"#F8B143"} />
+                      </div>
+                    </li>
+                  {/each}
+                </ul>
+              </div>
+            {/if}
+          {/each}
+          <h6>advanced and expert criteria hidden ...</h6>
+        </div>
+      </SummaryDetail>
     {/each}
   </div>
 </div>
@@ -84,29 +87,7 @@
     display: initial;
   }
 
-  details {
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
-  }
-
-  details[open] summary {
-    margin-bottom: 10px;
-    height:fit-content;
-  }
-
-  details[closed] summary {
-    margin-bottom: 10px;
-    height:0px;
-  }
-  
-  summary {
-    transition: height 500ms ease-out;
-    margin-right: 10px; /* Space between summary and details content */
-    cursor: pointer; /* Change cursor to indicate it's clickable */
-  }
-
-  .skill > summary {
+  .skilltitle {
     font-size: 1.5em;
   }
   .skill-area {

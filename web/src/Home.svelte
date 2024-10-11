@@ -12,18 +12,6 @@
 
   <button on:click={() => navigate("/prioritise")}>Prioritise Learning</button>
 
-  <SummaryDetail>
-    <p slot="slot1">title</p>
-    <div slot="slot2">
-      <p>text</p>
-      <p>text</p>
-      <p>text</p>
-      <p>text</p>
-      <p>text</p>
-      <p>text</p>
-      <p>text</p>
-    </div>
-  </SummaryDetail>
   <div class="areagrid">
     {#each skillAreas as area, i}
       <div on:click={() => navigate("/update", area)}>
