@@ -18,8 +18,6 @@
   function isChecked(criteria) {
     return checkedCriteria.has(criteria);
   }
-
-  console.log(area);
 </script>
 
 <div>
@@ -31,8 +29,8 @@
     <p>{area.description}</p>
 
     {#each area.skills as skill}
-      <div class="skill">
-        <h3>{skill.name}</h3>
+      <details class="skill">
+        <summary>{skill.name}</summary>
         <p>{skill.description}</p>
 
         {#each Object.entries(skill.criteria) as [level, criteria]}
@@ -53,7 +51,10 @@
                         ? 'checked'
                         : ''}">{criterion}</span
                     >
-                    <Stars filled={1} number={3} color={"#F8B143"} />
+                    <div id="confidence">
+                      <span>Select stars to indicate your confidence</span>
+                      <Stars filled={1} number={3} color={"#F8B143"} />
+                    </div>
                   </li>
                 {/each}
               </ul>
@@ -61,18 +62,53 @@
           {/if}
         {/each}
         <h6>advanced and expert criteria hidden ...</h6>
-        <h4>Resources for {skill.name}</h4>
-        <ul>
-          <li><a href="https://www.google.com">Google</a></li>
-          <li><a href="https://www.youtube.com">YouTube</a></li>
-          <li><a href="https://www.github.com">GitHub</a></li>
-        </ul>
-      </div>
+      </details>
     {/each}
   </div>
 </div>
 
 <style>
+  #confidence {
+    display: flex;
+    align-items: center;
+  }
+
+  #confidence span:first-child {
+    display: none;
+    font-size: 0.8em;
+    opacity: 0.7;
+    padding-right: 0.5em;
+  }
+
+  .criteria-level li:hover #confidence span:first-child {
+    display: initial;
+  }
+
+  details {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  details[open] summary {
+    margin-bottom: 10px;
+    height:fit-content;
+  }
+
+  details[closed] summary {
+    margin-bottom: 10px;
+    height:0px;
+  }
+  
+  summary {
+    transition: height 500ms ease-out;
+    margin-right: 10px; /* Space between summary and details content */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+  }
+
+  .skill > summary {
+    font-size: 1.5em;
+  }
   .skill-area {
     margin-bottom: 20px;
     padding: 15px;
